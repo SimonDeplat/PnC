@@ -2,5 +2,5 @@
 .godot/
 /android/
 
-Game/
-!Game/PnC_Demo/*
+Game/*
+!Game/PnC_Demo
