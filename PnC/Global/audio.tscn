@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://frslgb10nckm"]
+
+[ext_resource type="Script" uid="uid://bwbnls0opxgdo" path="res://PnC/Global/audio.gd" id="1_735m8"]
+
+[node name="Audio" type="Node" unique_id=1404560930]
+script = ExtResource("1_735m8")
+
+[node name="TrackPlayer" type="AudioStreamPlayer" parent="." unique_id=1682175890]
+volume_db = -6.0

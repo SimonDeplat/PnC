@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://by03dmujvep4g"]
+
+[ext_resource type="Script" uid="uid://rlrdx5le4q03" path="res://PnC/Global/world.gd" id="1_dgebn"]
+[ext_resource type="PackedScene" uid="uid://dbt1ky5ixi3ip" path="res://PnC/Cheats/cheats.tscn" id="3_15k8v"]
+[ext_resource type="PackedScene" uid="uid://betttkqe1kjm2" path="res://PnC/Global/text_display.tscn" id="3_qbyrd"]
+
+[node name="World" type="Node2D" unique_id=1617398881]
+script = ExtResource("1_dgebn")
+
+[node name="BGLayer" type="Node2D" parent="." unique_id=570117227]
+
+[node name="RoomContainer" type="Node2D" parent="." unique_id=363067455]
+
+[node name="UILayer" type="Node2D" parent="." unique_id=1138959627]
+
+[node name="TextDisplay" parent="." unique_id=1906011365 instance=ExtResource("3_qbyrd")]
+
+[node name="Object" type="Sprite2D" parent="." unique_id=58158890]
+
+[node name="MenuLayer" type="Node2D" parent="." unique_id=810595235]
+
+[node name="Cheats" parent="." unique_id=584158323 instance=ExtResource("3_15k8v")]

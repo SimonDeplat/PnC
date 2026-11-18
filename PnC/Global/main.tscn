@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ch63afuengkx4"]
+
+[ext_resource type="Script" uid="uid://dejxdrnuutw7i" path="res://PnC/Global/main.gd" id="1_jvvb7"]
+[ext_resource type="Script" uid="uid://w2wo33kuvis3" path="res://game_path.gd" id="2_jtbl0"]
+
+[node name="main" type="Node2D" unique_id=2032199861]
+script = ExtResource("1_jvvb7")
+
+[node name="Game" type="Node" parent="." unique_id=1235083251]
+script = ExtResource("2_jtbl0")
+
+[node name="MainMenuContainer" type="Node2D" parent="." unique_id=1176674653]
+
+[node name="WorldContainer" type="Node2D" parent="." unique_id=483445185]
+
+[node name="MenuContainer" type="Node2D" parent="." unique_id=504874461]

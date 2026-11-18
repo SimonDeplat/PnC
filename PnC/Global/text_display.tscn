@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://betttkqe1kjm2"]
+
+[ext_resource type="Script" uid="uid://3op7kmrt85r5" path="res://PnC/Global/text_display.gd" id="1_gbl3u"]
+[ext_resource type="Theme" uid="uid://b1dogtux25gm8" path="res://PnC/Assets/main_theme.tres" id="3_j5q67"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2yj1w"]
+load_path = "res://.godot/imported/BG.png-f5952b1029d50b9497a124d99a29c72a.ctex"
+
+[sub_resource type="Animation" id="Animation_pawjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kwkgg"]
+resource_name = "fadeIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_678sb"]
+resource_name = "fadeOut"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mf6sx"]
+_data = {
+&"RESET": SubResource("Animation_pawjf"),
+&"fadeIn": SubResource("Animation_kwkgg"),
+&"fadeOut": SubResource("Animation_678sb")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82rmw"]
+
+[node name="TextDisplay" type="Node2D" unique_id=1906011365]
+script = ExtResource("1_gbl3u")
+
+[node name="GlobalMouseControl" type="Control" parent="." unique_id=311387442]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="Shutter" type="Sprite2D" parent="." unique_id=1022452687]
+texture = SubResource("CompressedTexture2D_2yj1w")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="DrawingLayer" type="Node2D" parent="." unique_id=1416845820]
+
+[node name="TextBox" type="Node2D" parent="." unique_id=1864693504]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(960, 864)
+
+[node name="Anim" type="AnimationPlayer" parent="TextBox" unique_id=2043721129]
+libraries/ = SubResource("AnimationLibrary_mf6sx")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextBox" unique_id=1559892982]
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="TextBox" unique_id=1250724778]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextBox/Area2D" unique_id=1757022979]
+shape = SubResource("RectangleShape2D_82rmw")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="TextBox" unique_id=791190755]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("3_j5q67")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="gui_input" from="GlobalMouseControl" to="." method="_on_global_mouse_control_gui_input"]
+[connection signal="input_event" from="TextBox/Area2D" to="." method="_on_area_2d_input_event"]

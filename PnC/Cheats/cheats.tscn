@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dbt1ky5ixi3ip"]
+
+[ext_resource type="Theme" uid="uid://coa8s3njygd4a" path="res://PnC/Assets/cheat_theme.tres" id="1_7c0on"]
+[ext_resource type="Script" uid="uid://lbm2y1f3w6kf" path="res://PnC/Cheats/cheats.gd" id="2_gmayp"]
+[ext_resource type="Texture2D" uid="uid://01ujn10612mq" path="res://PnC/Assets/BG.png" id="2_ub75c"]
+
+[node name="Cheats" type="Control" unique_id=584158323]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7c0on")
+script = ExtResource("2_gmayp")
+
+[node name="Shutter" type="Sprite2D" parent="." unique_id=716592476]
+modulate = Color(0.60933006, 0.6093301, 0.60933006, 1)
+texture = ExtResource("2_ub75c")
+centered = false
+
+[node name="Menu" type="HBoxContainer" parent="." unique_id=132952483]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 1915.0
+offset_bottom = 103.0
+
+[node name="RoomsButton" type="Button" parent="Menu" unique_id=1756169104]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Rooms"
+
+[node name="GameStateButton" type="Button" parent="Menu" unique_id=987580790]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "GameState"
+
+[node name="CloseButton" type="Button" parent="Menu" unique_id=656575321]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "X"
+
+[node name="RoomHack" type="Control" parent="." unique_id=91599679]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 128.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+
+[node name="GridContainer" type="GridContainer" parent="RoomHack" unique_id=1111776937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="Menu/CloseButton" to="." method="_on_close_button_button_down"]
