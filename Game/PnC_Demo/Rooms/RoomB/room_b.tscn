@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ciu35lbi3bk83"]
+
+[ext_resource type="Texture2D" uid="uid://dmluxtewqg8wt" path="res://Game/PnC_Demo/Rooms/RoomB/roomB.png" id="1_8b5ru"]
+[ext_resource type="Script" uid="uid://cekctry5vt8mn" path="res://Game/PnC_Demo/Rooms/RoomB/room_b.gd" id="1_v5a7n"]
+[ext_resource type="Script" uid="uid://byynappu880pn" path="res://PnC/CustomClasses/PnC_RoomWay.gd" id="2_t05cc"]
+[ext_resource type="Script" uid="uid://bnh1otkb2uwnq" path="res://PnC/CustomClasses/PnC_Interaction.gd" id="4_58gi6"]
+[ext_resource type="Texture2D" uid="uid://b7vra65sr6ujv" path="res://Game/PnC_Demo/Assets/painting.png" id="5_n88oj"]
+[ext_resource type="Texture2D" uid="uid://d1vl3g6tks6t1" path="res://Game/PnC_Demo/Assets/character.png" id="6_us7dh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbr48"]
+size = Vector2(182, 206)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5a7n"]
+radius = 94.0
+height = 390.0
+
+[node name="RoomB" type="Node2D" unique_id=414931771]
+script = ExtResource("1_v5a7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1932936081]
+texture = ExtResource("1_8b5ru")
+centered = false
+
+[node name="PnC_RoomWay" type="Area2D" parent="." unique_id=1940966236]
+position = Vector2(63, 540)
+script = ExtResource("2_t05cc")
+target_room = "RoomA"
+hover_cursor = "move"
+metadata/_custom_type_script = "uid://byynappu880pn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PnC_RoomWay" unique_id=1144815772]
+polygon = PackedVector2Array(0, 0, 216, 0, 216, 383, 0, 505)
+
+[node name="PnC_Interaction" type="Area2D" parent="." unique_id=593523110]
+position = Vector2(684, 594)
+script = ExtResource("4_58gi6")
+hover_cursor = "inspect"
+metadata/_custom_type_script = "uid://bnh1otkb2uwnq"
+
+[node name="Sprite2D" type="Sprite2D" parent="PnC_Interaction" unique_id=2025705284]
+texture = ExtResource("5_n88oj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PnC_Interaction" unique_id=218379277]
+shape = SubResource("RectangleShape2D_dbr48")
+metadata/_edit_lock_ = true
+
+[node name="PnC_Interaction2" type="Area2D" parent="." unique_id=1883255043]
+position = Vector2(1243, 798)
+script = ExtResource("4_58gi6")
+hover_cursor = "talk"
+metadata/_custom_type_script = "uid://bnh1otkb2uwnq"
+
+[node name="Sprite2D" type="Sprite2D" parent="PnC_Interaction2" unique_id=743182414]
+texture = ExtResource("6_us7dh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PnC_Interaction2" unique_id=964910708]
+shape = SubResource("CapsuleShape2D_v5a7n")

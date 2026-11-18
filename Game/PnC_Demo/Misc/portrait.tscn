@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ca507p18wlaio"]
+
+[ext_resource type="Texture2D" uid="uid://bqbheelfar1ke" path="res://Game/PnC_Demo/Assets/portrait.png" id="1_3fmdr"]
+
+[node name="portrait" type="Sprite2D" unique_id=1890355077]
+texture = ExtResource("1_3fmdr")
+centered = false

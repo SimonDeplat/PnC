@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cmf4shqa1ilqd"]
+
+[ext_resource type="Texture2D" uid="uid://dnk8wjmvfrg41" path="res://Game/PnC_Demo/Rooms/RoomA/roomA.png" id="1_5khgd"]
+[ext_resource type="Script" uid="uid://byynappu880pn" path="res://PnC/CustomClasses/PnC_RoomWay.gd" id="2_6bmou"]
+
+[node name="RoomA" type="Node2D" unique_id=1666656335]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1141748331]
+texture = ExtResource("1_5khgd")
+centered = false
+
+[node name="PnC_RoomWay" type="Area2D" parent="." unique_id=430247765]
+position = Vector2(1641, 540)
+script = ExtResource("2_6bmou")
+target_room = "RoomB"
+hover_cursor = "move"
+metadata/_custom_type_script = "uid://byynappu880pn"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PnC_RoomWay" unique_id=945595958]
+polygon = PackedVector2Array(0, 0, 216, 0, 216, 504, 0, 383)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bn6yqkmoim0kb"]
+
+[ext_resource type="Script" uid="uid://1k4hy304ax16" path="res://Game/PnC_Demo/game.gd" id="1_ojx4u"]
+
+[node name="game" type="Node" unique_id=871855822]
+script = ExtResource("1_ojx4u")
