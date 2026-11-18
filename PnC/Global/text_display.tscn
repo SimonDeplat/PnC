@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://betttkqe1kjm2"]
 
 [ext_resource type="Script" uid="uid://3op7kmrt85r5" path="res://PnC/Global/text_display.gd" id="1_gbl3u"]
+[ext_resource type="Texture2D" uid="uid://01ujn10612mq" path="res://PnC/Assets/BG.png" id="2_gbl3u"]
 [ext_resource type="Theme" uid="uid://b1dogtux25gm8" path="res://PnC/Assets/main_theme.tres" id="3_j5q67"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2yj1w"]
-load_path = "res://.godot/imported/BG.png-f5952b1029d50b9497a124d99a29c72a.ctex"
 
 [sub_resource type="Animation" id="Animation_pawjf"]
 length = 0.001
@@ -73,7 +71,7 @@ offset_bottom = 1080.0
 metadata/_edit_lock_ = true
 
 [node name="Shutter" type="Sprite2D" parent="." unique_id=1022452687]
-texture = SubResource("CompressedTexture2D_2yj1w")
+texture = ExtResource("2_gbl3u")
 centered = false
 metadata/_edit_lock_ = true
 
